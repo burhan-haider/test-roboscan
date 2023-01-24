@@ -7,7 +7,7 @@ import { useSectionData } from 'store/store'
 
 function App(props) {
     
-    const {expanded, setExpanded} = props
+    const {expanded, setExpanded, selectedSection} = props
 
     const allSections = useSectionData(state=>state.sectionDetails);
     const headerDetails = useSectionData(state=>state.headerDetails);
@@ -52,39 +52,80 @@ function App(props) {
                 </>
             ):(
                 <>
-                    <Grid item xs={12}>
-                        <ExecutiveSummary summaryDetails={headerDetails} />
-                    </Grid>
+                    {selectedSection===null && (
+                        <Grid item xs={12}>
+                            <ExecutiveSummary summaryDetails={headerDetails} />
+                        </Grid>
+                    )}
+                    
                     {allSections.length > 0 &&
                         allSections.map((sec, index) => (
-                            <Grid
-                                item
-                                xs={sizeCondition(sec, 'xs')}
-                                md={sizeCondition(sec, 'md')}
-                                lg={sizeCondition(sec, 'lg')}
-                                key={sec.id}
-                                className="transition-all duration-500"
-                                id={`section-${sec.id}`}
-                            >
-                                <GeneralContainer
-                                    expandable={sec.expandable}
-                                    title={sec.name}
-                                    sectionId={sec.id}
-                                    key={sec.id}
-                                    type={sec.type}
-                                    graphDetails={sec.graphDetails}
-                                    hasGraph={sec.hasGraph}
-                                    hasForm={sec.hasForm}
-                                    hasTable={sec.hasTable}
-                                    formDetails={sec.formDetails || []}
-                                    tableDetails={sec.tableDetails || {HEADER:[], DATA:[]}}
-                                    expanded={expanded}
-                                    setExpanded={setExpanded}
-                                    {...sec}
-                                >
-                                    Other Container
-                                </GeneralContainer>
-                            </Grid>
+                            <>
+                                {selectedSection!==null ? (
+                                    <>
+                                        {selectedSection===sec.id&&(
+                                            <Grid
+                                                item
+                                                xs={12}
+                                                key={sec.id}
+                                                className="transition-all duration-500"
+                                                id={`section-${sec.id}`}
+                                            >
+                                                <GeneralContainer
+                                                    expandable={false}
+                                                    iconExpand={false}
+                                                    title={sec.name}
+                                                    sectionId={sec.id}
+                                                    key={sec.id}
+                                                    type={sec.type}
+                                                    graphDetails={sec.graphDetails}
+                                                    hasGraph={sec.hasGraph}
+                                                    hasForm={sec.hasForm}
+                                                    hasTable={sec.hasTable}
+                                                    formDetails={sec.formDetails || []}
+                                                    tableDetails={sec.tableDetails || {HEADER:[], DATA:[]}}
+                                                    expanded={[sec.id]}
+                                                    setExpanded={setExpanded}
+                                                    {...sec}
+                                                >
+                                                    Other Container
+                                                </GeneralContainer>
+                                            </Grid>
+                                        )}
+                                    </>
+                                ) : (
+                                    <Grid
+                                        item
+                                        xs={sizeCondition(sec, 'xs')}
+                                        md={sizeCondition(sec, 'md')}
+                                        lg={sizeCondition(sec, 'lg')}
+                                        key={sec.id}
+                                        className="transition-all duration-500"
+                                        id={`section-${sec.id}`}
+                                    >
+                                        <GeneralContainer
+                                            expandable={sec.expandable}
+                                            iconExpand={true}
+                                            title={sec.name}
+                                            sectionId={sec.id}
+                                            key={sec.id}
+                                            type={sec.type}
+                                            graphDetails={sec.graphDetails}
+                                            hasGraph={sec.hasGraph}
+                                            hasForm={sec.hasForm}
+                                            hasTable={sec.hasTable}
+                                            formDetails={sec.formDetails || []}
+                                            tableDetails={sec.tableDetails || {HEADER:[], DATA:[]}}
+                                            expanded={expanded}
+                                            setExpanded={setExpanded}
+                                            {...sec}
+                                        >
+                                            Other Container
+                                        </GeneralContainer>
+                                    </Grid>
+                                )}
+                            </>
+                            
                         ))
                     }
                 </>

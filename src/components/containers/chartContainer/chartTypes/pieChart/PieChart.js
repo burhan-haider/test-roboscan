@@ -10,7 +10,6 @@ const PieChart = (props) => {
             trigger: 'item',
         },
         legend: {
-            orient: 'vertical',
             top: '5%',
             left: 'left',
         },
@@ -19,7 +18,7 @@ const PieChart = (props) => {
                 name: 'Access From',
                 type: 'pie',
                 radius: ['50%', '90%'],
-                avoidLabelOverlap: false,
+                avoidLabelOverlap: true,
                 label: {
                     show: false,
                     position: 'center',
@@ -34,6 +33,7 @@ const PieChart = (props) => {
                 labelLine: {
                     show: false,
                 },
+                top: '60px',
                 data: chartData.ATTRIBUTE.map((item, index)=>{
                     return{
                         value: chartData.VALUES[0][index],
@@ -72,7 +72,7 @@ const PieChart = (props) => {
 
     return(
         <>
-            <ReactEcharts option={options} />
+            <ReactEcharts style={{minHeight: '100%'}} option={options} />
         </>
     )
 }

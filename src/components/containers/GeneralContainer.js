@@ -15,6 +15,7 @@ const GeneralContainer = (props) => {
         title,
         children,
         expandable = false,
+        iconExpand,
         divider = true,
         expanded,
         setExpanded,
@@ -23,8 +24,8 @@ const GeneralContainer = (props) => {
         type,
         graphDetails,
         hasGraph,
-        // hasTable,
-        // hasForm,
+        hasTable,
+        hasForm,
         formDetails,
         summaryDetails,
         tableDetails
@@ -51,11 +52,11 @@ const GeneralContainer = (props) => {
             <Box className="flex justify-between items-center mb-2">
                 <Typography
                     as="h5"
-                    className="font-bold text-2xl text-[#171923]"
+                    className="font-bold text-xl text-[#171923]"
                 >
                     {title}
                 </Typography>
-                {expandable && (
+                {iconExpand === true && (
                     <IconButton onClick={() => toggleExpand()}>
                         {expanded.filter((e) => e === sectionId)
                             .length > 0 ? (
@@ -68,25 +69,49 @@ const GeneralContainer = (props) => {
             </Box>
 
             {divider && (
-                <hr className="border-1 border-[#4f4f4f] bg-[#4f4f4f]" />
+                <hr className="bg-[#666] h-[1px] shadow-none border-none" />
             )}
             <Box className="mt-5">
-                {type === 'graph' ? (
-                    <ChartContainer 
-                        hasGraph={hasGraph} 
-                        graphDetails={graphDetails} 
-                    />
-                ) : type === 'table' ? (
-                    <DataGrid expanded={expanded.includes(sectionId)} tableData={tableDetails} title={title} utilColumn={'select'} />
-                ) : type === 'form' ? (
-                    <FormContainer
-                        sectionId={sectionId}
-                        formDetails={formDetails}
-                        expanded={expanded}
-                    />
-                ) : (
-                    <>{children}</>
+                {expanded.filter((e)=>e===sectionId).length > 0 ? (
+                    <Box>
+                        {hasGraph === "true" && (
+                            <ChartContainer 
+                                hasGraph={hasGraph} 
+                                graphDetails={graphDetails} 
+                            />
+                        )}
+                        {hasForm === "true" && (
+                            <FormContainer
+                                sectionId={sectionId}
+                                formDetails={formDetails}
+                                expanded={expanded}
+                            />
+                        )}
+                        {hasTable === "true" && (
+                            <DataGrid expanded={expanded.includes(sectionId)} tableData={tableDetails} title={title} utilColumn={'select'} />
+                        )}
+                    </Box>
+                ):(
+                    <>
+                        {type === 'graph' ? (
+                            <ChartContainer 
+                                hasGraph={hasGraph} 
+                                graphDetails={graphDetails} 
+                            />
+                        ) : type === 'table' ? (
+                            <DataGrid expanded={expanded.includes(sectionId)} tableData={tableDetails} title={title} utilColumn={'select'} />
+                        ) : type === 'form' ? (
+                            <FormContainer
+                                sectionId={sectionId}
+                                formDetails={formDetails}
+                                expanded={expanded}
+                            />
+                        ) : (
+                            <>{children}</>
+                        )}
+                    </>
                 )}
+                
             </Box>
         </Box>
     )

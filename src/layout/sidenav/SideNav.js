@@ -24,29 +24,17 @@ const CustomTooltip = styled(({ className, ...props }) => (
 
 const SideNav = (props) => {
 
-    const {expanded, setExpanded} = props
+    const {expanded, setExpanded, selectedSection, setSelectedSection} = props
 
     const allSections = useSectionData(state=>state.sectionDetails)
 
     const handleSelect = (sec) => {
-        const sectionLocation = document.getElementById(`section-${sec.id}`)
-        console.log('Section', sectionLocation)
-        if (expanded.filter((e) => e === sec.id).length === 0) {
-            setExpanded([...expanded, sec.id])
-            if(sectionLocation !== null){
-                sectionLocation.scrollIntoView({behavior: 'smooth', block: 'nearest', inline: 'start'})
-            }
-            return
-        }
-        if (expanded.filter((e) => e === sec.id).length > 0) {
-            setExpanded(expanded.filter((e) => e !== sec.id))
-            if(sectionLocation !== null){
-                sectionLocation.scrollIntoView({behavior: 'smooth', block: 'nearest', inline: 'start'})
-            }
-            return
-        }
 
-        
+        if(selectedSection === sec.id){
+            setSelectedSection(null)
+        } else {  
+            setSelectedSection(sec.id);
+        }
     }
 
     return (
@@ -60,9 +48,9 @@ const SideNav = (props) => {
                     >
                         <MenuItem
                             className={
-                                'flex justify-center items-center my-4 hover:bg-[#e0e0e0e0]  hover:text-app-dark rounded-full w-12 h-12 mx-auto hover:scale-110 transition-all p-3' +
+                                'flex justify-center items-center my-4 hover:bg-[#e0e0e0e0]  hover:text-app-dark rounded-full w-10 h-10 mx-auto hover:scale-110 transition-all p-3' +
                                 ' ' +
-                                (expanded.filter((e) => e === sec.id).length > 0
+                                (selectedSection === sec.id
                                     ? 'bg-[#e0e0e0] text-app-dark scale-110'
                                     : 'text-white')
                             }
@@ -72,13 +60,12 @@ const SideNav = (props) => {
 
                             {sec.icon ? (
                                 <>
-                                    {expanded.filter((e) => e === sec.id)
-                                        .length > 0 ? (
+                                    {selectedSection === sec.id ? (
                                         <img
                                             src={getIconByKey(
                                                 `${sec.icon}Active`
                                             )}
-                                            className="w-[40px] h-auto"
+                                            className="w-[35px] h-auto"
                                             alt={sec.name}
                                         />
                                     ) : (
@@ -89,7 +76,7 @@ const SideNav = (props) => {
                                             hoverSrc={getIconByKey(
                                                 `${sec.icon}Active`
                                             )}
-                                            className="w-[40px] h-auto"
+                                            className="w-[35px] h-auto"
                                             alt={sec.name}
                                         />
                                     )}

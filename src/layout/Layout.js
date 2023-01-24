@@ -6,18 +6,26 @@ import TopNav from './topnav'
 const Layout = ({ children }) => {
 
     const [expanded, setExpanded] = useState([])
+    const [selectedSection, setSelectedSection] = useState(null);
 
     return (
         <Box className="w-[100vw]">
             <TopNav />
             <Box className="flex flex-row w-[100vw]">
-                <Box className="min-w-[100px] h-[100vh]">
-                    <SideNav expanded={expanded} setExpanded={setExpanded} />
+                <Box className="min-w-[80px] h-[100vh]">
+                    <SideNav 
+                        expanded={expanded} 
+                        setExpanded={setExpanded}
+                        selectedSection={selectedSection} 
+                        setSelectedSection={setSelectedSection}
+                    />
                 </Box>
-                <Box className="w-[calc(100vw-100px)]">
+                <Box className="w-[calc(100vw-80px)]">
                     {React.cloneElement(children, {
                         expanded: expanded,
                         setExpanded: setExpanded,
+                        selectedSection: selectedSection,
+                        setSelectedSection: setSelectedSection
                     })}
                 </Box>
             </Box>

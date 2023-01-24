@@ -22,7 +22,7 @@ const ExecutiveSummary = (props) => {
             {summaryDetails !== [] &&(
                 <>
                     <Box className="mt-3 mb-4">
-                        <Typography className="text-xl" display="inline">
+                        <Typography className="text-lg" display="inline">
                             The &nbsp;
                             <b>{summaryDetails.HEADER_ALERTNAME}</b>
                             &nbsp; scenario was breached for &nbsp;
@@ -41,11 +41,11 @@ const ExecutiveSummary = (props) => {
                             <b>{summaryDetails.HEADER_CASE_RATING}</b>.
                         </Typography>
                     </Box>
-                    <hr className="border-1 border-[#4f4f4f] bg-[#4f4f4f]" />
+                    <hr className="bg-[#666] h-[1.5px] shadow-none border-none" />
                     <Box className="mt-4">
                         <Typography
                             as="h5"
-                            className="font-bold text-2xl text-[#171923]"
+                            className="font-bold text-xl text-[#171923]"
                         >
                             Executive Summary
                         </Typography>
@@ -54,7 +54,7 @@ const ExecutiveSummary = (props) => {
                         <Grid item lg={6} xs={12} >
                             {/* <Box className="flex flex-row justify-start items-start mb-5"> */}
                             <Box className="flex flex-col justify-start items-start mb-6 pr-5">
-                                <Typography className="mr-5 min-w-fit mb-2 ml-2">
+                                <Typography className="mr-5 min-w-fit mb-2 ml-2 text-base">
                                     Case No.
                                 </Typography>
 
@@ -62,6 +62,11 @@ const ExecutiveSummary = (props) => {
                                     value={summaryDetails.HEADER_CASE_ID}
                                     variant="outlined"
                                     className="w-full mr-5 bg-white"
+                                    sx={{
+                                        "& .MuiInputBase-input.Mui-disabled": {
+                                          WebkitTextFillColor: "#444",
+                                        },
+                                    }}
                                     disabled
                                 />
                             </Box>
@@ -69,7 +74,7 @@ const ExecutiveSummary = (props) => {
                         <Grid item lg={6} xs={12} >
                             {/* <Box className="flex flex-row justify-start items-start mb-5"> */}
                             <Box className="flex flex-col justify-start items-start mb-6 pr-5">
-                                <Typography className="mr-5 min-w-fit mb-2 ml-2">
+                                <Typography className="mr-5 min-w-fit mb-2 ml-2 text-base">
                                     Scenario(s) Breached
                                 </Typography>
 
@@ -77,6 +82,11 @@ const ExecutiveSummary = (props) => {
                                     value={summaryDetails.HEADER_CASEALERTSCOUNT}
                                     variant="outlined"
                                     className="w-full mr-5 bg-white"
+                                    sx={{
+                                        "& .MuiInputBase-input.Mui-disabled": {
+                                          WebkitTextFillColor: "#444",
+                                        },
+                                    }}
                                     disabled
                                 />
                             </Box>
@@ -84,7 +94,7 @@ const ExecutiveSummary = (props) => {
                         <Grid item xs={12}>
                             {/* <Box className="flex flex-row justify-start items-start mb-5"> */}
                             <Box className="flex flex-col justify-start items-start mb-6 mr-5">
-                                <Typography className="mr-5 min-w-fit mb-2 ml-2">
+                                <Typography className="mr-5 min-w-fit mb-2 ml-2 text-base">
                                     Description Of Breached Scenario(s)
                                 </Typography>
 
@@ -92,6 +102,11 @@ const ExecutiveSummary = (props) => {
                                     value={summaryDetails.HEADER_DESCRIPTION}
                                     variant="outlined"
                                     className="w-full bg-white"
+                                    sx={{
+                                        "& .MuiInputBase-input.Mui-disabled": {
+                                          WebkitTextFillColor: "#444",
+                                        },
+                                    }}
                                     multiline
                                     rows={4}
                                     disabled
@@ -100,7 +115,7 @@ const ExecutiveSummary = (props) => {
                         </Grid>
                         <Grid item xs={12}>
                             <Box className="flex flex-row justify-start items-center mt-5 mb-5">
-                                <Typography className="min-w-fit mr-10">
+                                <Typography className="min-w-fit mr-10 text-base">
                                     Is Bank Employee
                                 </Typography>
                                 <RadioGroup

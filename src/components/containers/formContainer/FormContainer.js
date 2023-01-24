@@ -78,7 +78,7 @@ const FormContainer = (props) => {
                                         >
                                             {/* <Box className="flex flex-row justify-start items-start mb-5"> */}
                                             <Box className="flex flex-col justify-start items-start mb-6 pr-5">
-                                                <Typography className="mr-5 min-w-fit mb-2 ml-2">
+                                                <Typography className="mr-5 min-w-fit mb-2 ml-2 text-base">
                                                     {field.name}
                                                 </Typography>
 
@@ -86,6 +86,11 @@ const FormContainer = (props) => {
                                                     value={field.value||"N.A"}
                                                     variant="outlined"
                                                     className="w-full mr-5 bg-white"
+                                                    sx={{
+                                                        "& .MuiInputBase-input.Mui-disabled": {
+                                                          WebkitTextFillColor: "#444",
+                                                        },
+                                                    }}
                                                     disabled
                                                 />
                                             </Box>
@@ -94,14 +99,19 @@ const FormContainer = (props) => {
                                         <Grid item xs={12}>
                                             {/* <Box className="flex flex-row justify-start items-start mb-5"> */}
                                             <Box className="flex flex-col justify-start items-start mb-6 mr-5">
-                                                <Typography className="mr-5 min-w-fit mb-2 ml-2">
+                                                <Typography className="mr-5 min-w-fit mb-2 ml-2 text-base">
                                                     {field.name}
                                                 </Typography>
 
                                                 <TextField
                                                     value={field.value||"N.A"}
                                                     variant="outlined"
-                                                    className="w-full bg-white"
+                                                    className="w-full bg-white text-black"
+                                                    sx={{
+                                                        "& .MuiInputBase-input.Mui-disabled": {
+                                                          WebkitTextFillColor: "#444",
+                                                        },
+                                                    }}
                                                     multiline
                                                     rows={4}
                                                     disabled
@@ -122,8 +132,8 @@ const FormContainer = (props) => {
                                             xs={12} 
                                         >
                                             <Box key={index} className="flex flex-row justify-start items-center" >
-                                                <Checkbox />
-                                                <Typography className="min-w-fit ml-2 mt-1">
+                                                <Checkbox size='sm' />
+                                                <Typography className="min-w-fit ml-2 mt-1 text-base">
                                                     {field.name}
                                                 </Typography>
                                             </Box>
@@ -131,7 +141,7 @@ const FormContainer = (props) => {
                                     ) : field.inputType === 'radio' ? (
                                         <Grid item xs={12} key={index}>
                                             <Box className="flex flex-row justify-start items-center mt-5 mb-5">
-                                                <Typography className="min-w-fit mr-10">
+                                                <Typography className="min-w-fit mr-10 text-base">
                                                     {field.name}
                                                 </Typography>
                                                 <RadioGroup
@@ -169,13 +179,26 @@ const FormContainer = (props) => {
                                             xs={12}
                                         >
                                             <Box className="flex flex-col justify-start items-start mb-6" >
-                                                <Typography className="mr-5 min-w-fit mb-2 ml-2">
+                                                <Typography className="mr-5 min-w-fit mb-2 ml-2 text-base">
                                                     {field.name}
                                                 </Typography>
                                                 <LocalizationProvider dateAdapter={AdapterMoment}>
                                                     <DatePicker
                                                         value={field.value|| moment()}
-                                                        renderInput={(params)=><TextField style={{width: 'calc(100% - 20px)', background: 'white'}} {...params} />}
+                                                        renderInput={(params)=>
+                                                            <TextField 
+                                                                sx={{
+                                                                    "& .MuiInputBase-input.Mui-disabled": {
+                                                                    WebkitTextFillColor: "#444",
+                                                                    },
+                                                                }} 
+                                                                style={{
+                                                                    width: 'calc(100% - 20px)', 
+                                                                    background: 'white'
+                                                                }} 
+                                                                {...params} 
+                                                            />
+                                                        }
                                                         onChange={()=>{}}
                                                         disabled
                                                     />
@@ -184,7 +207,7 @@ const FormContainer = (props) => {
                                         </Grid>
                                     ) : (
                                         <Box key={index}>
-                                            <Typography>
+                                            <Typography className='text-base'>
                                                 Unknown Type of Input
                                             </Typography>
                                         </Box>
