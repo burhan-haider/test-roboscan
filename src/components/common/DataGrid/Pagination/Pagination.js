@@ -62,7 +62,7 @@ const Pagination = (props) => {
                     <MenuItem value={15}>15</MenuItem>
                     <MenuItem value={30}>30</MenuItem>
                 </Select>
-                <Typography className="ml-5">
+                <Typography className="ml-5 text-base">
                     Results: {firstIndex + 1} -{' '}
                     {currentPage === numOfPages ? totalRows.length : lastIndex}{' '}
                     of {totalRows.length}
@@ -109,7 +109,7 @@ const Pagination = (props) => {
                                     <li className="list-none">
                                         <button
                                             onClick={() => setCurrentPage(1)}
-                                            className={`text-lg border-solid border-[0.5px] w-8 border-slate-500 cursor-pointer rounded-md mx-1
+                                            className={`text-base border-solid border-[0.5px] w-8 border-slate-500 cursor-pointer rounded-md mx-1
                                                         ${
                                                             currentPage === 1
                                                                 ? ' bg-app-dark text-white'
@@ -132,7 +132,7 @@ const Pagination = (props) => {
                                                 onClick={() =>
                                                     setCurrentPage(pgNumber)
                                                 }
-                                                className={`text-lg border-solid border-[0.5px] w-8 border-slate-500 cursor-pointer rounded-md mx-1
+                                                className={`text-base border-solid border-[0.5px] w-8 border-slate-500 cursor-pointer rounded-md mx-1
                                                             ${
                                                                 currentPage ===
                                                                 pgNumber
@@ -157,7 +157,7 @@ const Pagination = (props) => {
                                                             numOfPages
                                                         )
                                                     }
-                                                    className={`text-lg border-solid border-[0.5px] w-8 border-slate-500 cursor-pointer rounded-md mx-1
+                                                    className={`text-base border-solid border-[0.5px] w-8 border-slate-500 cursor-pointer rounded-md mx-1
                                                                 ${
                                                                     currentPage ===
                                                                     numOfPages
@@ -183,7 +183,7 @@ const Pagination = (props) => {
                                                 onClick={() =>
                                                     setCurrentPage(pgNumber)
                                                 }
-                                                className={`text-lg border-solid border-[0.5px] w-8 border-slate-500 cursor-pointer rounded-md mx-1
+                                                className={`text-base border-solid border-[0.5px] w-8 border-slate-500 cursor-pointer rounded-md mx-1
                                                                 ${
                                                                     currentPage ===
                                                                     pgNumber
@@ -204,7 +204,7 @@ const Pagination = (props) => {
                                             onClick={() =>
                                                 setCurrentPage(numOfPages)
                                             }
-                                            className={`text-lg border-solid border-[0.5px] w-8 border-slate-500 cursor-pointer rounded-md mx-1
+                                            className={`text-base border-solid border-[0.5px] w-8 border-slate-500 cursor-pointer rounded-md mx-1
                                                         ${
                                                             currentPage ===
                                                             numOfPages
@@ -225,7 +225,7 @@ const Pagination = (props) => {
                                 <li key={pgNumber} className="list-none">
                                     <button
                                         onClick={() => setCurrentPage(pgNumber)}
-                                        className={`text-lg border-solid border-[0.5px] w-8 border-slate-500 cursor-pointer rounded-md mx-1
+                                        className={`text-base border-solid border-[0.5px] w-8 border-slate-500 cursor-pointer rounded-md mx-1
                                                         ${
                                                             currentPage ===
                                                             pgNumber

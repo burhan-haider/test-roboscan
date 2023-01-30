@@ -48,10 +48,10 @@ const FormContainer = (props) => {
                                 <Grid item xs={12}>
                                     <Box
                                         key={index}
-                                        className="flex justify-center items-center mb-5"
+                                        className="flex justify-start items-center mb-5"
                                     >
                                         <Button
-                                            className="bg-white w-full text-app-dark"
+                                            className="rounded-lg px-5 py-2 normal-case bg-app-dark hover:bg-black mx-2 my-3 text-sm text-white"
                                             variant="contained"
                                             onClick={() =>
                                                 functionByType(field)

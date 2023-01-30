@@ -411,6 +411,7 @@ const DataGrid = (props) => {
                     setSearchString={setSearchString}
                     filterActive={filterActive}
                     setFilterActive={setFilterActive}
+                    expanded={expanded}
                 />
                 {gridElement(sortedRows)}
                 <Pagination

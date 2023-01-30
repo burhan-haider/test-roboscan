@@ -10,7 +10,7 @@ import { BsLayoutSidebarInset } from 'react-icons/bs'
 import { FaAngleDown } from 'react-icons/fa'
 
 const FreezeDropdown = (props) => {
-    const { checkedState, setCheckedState, columns, setColumns, utilColumn } =
+    const { checkedState, setCheckedState, columns, setColumns, utilColumn, expanded } =
         props
 
     const [freezeAnchor, setFreezeAnchor] = useState(null)
@@ -74,8 +74,12 @@ const FreezeDropdown = (props) => {
                 onClick={handleOpenFreeze}
                 endIcon={<FaAngleDown size={12} />}
             >
-                <BsLayoutSidebarInset size={16} className="mr-4" />
-                Freeze
+                <BsLayoutSidebarInset size={16} />
+                {expanded === true && (
+                    <p className='ml-3 my-0' >
+                        Freeze
+                    </p>
+                )}
             </Button>
 
             <Menu

@@ -15,7 +15,7 @@ import { FaAngleDown } from 'react-icons/fa'
 import { MdReorder, MdViewColumn } from 'react-icons/md'
 
 const ReorderDropdown = (props) => {
-    const { checkedState, setCheckedState, columns, setColumns, utilColumn } =
+    const { checkedState, setCheckedState, columns, setColumns, utilColumn, expanded } =
         props
 
     const [anchorEl, setAnchorEl] = useState(null)
@@ -90,8 +90,13 @@ const ReorderDropdown = (props) => {
                 onClick={handleOpen}
                 endIcon={<FaAngleDown size={12} />}
             >
-                <MdViewColumn size={16} className="mr-4" />
-                Column Order
+                <MdViewColumn size={16} />
+                {expanded === true && (
+                    <p className='ml-3 my-0' >
+                        Column Order
+                    </p>
+                )}
+                
             </Button>
 
             <Menu

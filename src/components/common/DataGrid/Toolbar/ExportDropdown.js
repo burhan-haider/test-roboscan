@@ -16,7 +16,7 @@ import { FaAngleDown, FaUpload } from 'react-icons/fa'
 import { exportToCsv, exportToPdf, exportToXlsx } from '../utils/exportUtils'
 
 const ExportDropdown = (props) => {
-    const { gridElement, selectedGridElement, isSelected, title, btnText } =
+    const { gridElement, selectedGridElement, isSelected, title, btnText, expanded } =
         props
 
     const [exportAnchor, setExportAnchor] = useState(null)
@@ -45,8 +45,13 @@ const ExportDropdown = (props) => {
                 onClick={handleOpenExport}
                 endIcon={<FaAngleDown size={12} />}
             >
-                <FaUpload size={16} className="mr-3" />
-                {exporting ? 'Exporting' : btnText}
+                <FaUpload size={16} />
+                {expanded === true && (
+                    <p className='ml-3 my-0' >
+                        {exporting ? 'Exporting' : btnText}
+                    </p>
+                )}
+                
             </Button>
 
             <Menu

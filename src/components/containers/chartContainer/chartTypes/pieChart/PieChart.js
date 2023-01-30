@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useMemo } from 'react'
 import ReactEcharts from 'echarts-for-react'
 
 const PieChart = (props) => {
 
-    const { chartData } = props;
+    const { chartData, expanded } = props;
+    
 
-    const options = {
+    const pieOptions = {
         tooltip: {
             trigger: 'item',
         },
         legend: {
-            top: '5%',
             left: 'left',
         },
         series: [
@@ -33,7 +33,7 @@ const PieChart = (props) => {
                 labelLine: {
                     show: false,
                 },
-                top: '60px',
+                top: '100px',
                 data: chartData.ATTRIBUTE.map((item, index)=>{
                     return{
                         value: chartData.VALUES[0][index],
@@ -70,9 +70,22 @@ const PieChart = (props) => {
         ],
     };
 
+    const [option, setOption] = useState(pieOptions);
+    useEffect(()=>{
+        setOption(pieOptions)
+    }, [expanded])
+
+
     return(
         <>
-            <ReactEcharts style={{minHeight: '100%'}} option={options} />
+            <ReactEcharts 
+                style={{
+                    minHeight: '350px', 
+                    minWidth: '350px', 
+                    maxWidth: '460px'
+                }} 
+                option={option} 
+            />
         </>
     )
 }

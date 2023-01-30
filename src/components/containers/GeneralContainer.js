@@ -78,6 +78,7 @@ const GeneralContainer = (props) => {
                             <ChartContainer 
                                 hasGraph={hasGraph} 
                                 graphDetails={graphDetails} 
+                                expanded={expanded}
                             />
                         )}
                         {hasForm === "true" && (

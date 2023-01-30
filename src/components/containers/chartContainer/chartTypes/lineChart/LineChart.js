@@ -3,9 +3,9 @@ import ReactEcharts from 'echarts-for-react'
 
 const LineChart = (props) => {
 
-    const { chartData } = props;
+    const { chartData, expanded } = props;
 
-    const options = {
+    const lineOptions = {
         legend: {},
         tooltip: {},
         dataset: {
@@ -55,9 +55,22 @@ const LineChart = (props) => {
         ],
     };
 
+    const [option, setOption] = useState(lineOptions);
+
+    useEffect(()=>{
+        setOption(lineOptions)
+    }, [expanded])
+
     return(
         <>
-            <ReactEcharts option={options} />
+            <ReactEcharts
+                style={{
+                    minHeight: '350px', 
+                    minWidth: '350px', 
+                    maxWidth: '460px'
+                }}
+                option={option} 
+            />
         </>
     )
 }

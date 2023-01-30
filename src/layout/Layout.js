@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
 
     return (
         <Box className="w-[100vw]">
-            <TopNav />
+            <TopNav setSelectedSection={setSelectedSection} />
             <Box className="flex flex-row w-[100vw]">
                 <Box className="min-w-[80px] h-[100vh]">
                     <SideNav 

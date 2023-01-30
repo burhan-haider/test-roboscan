@@ -12,8 +12,9 @@ import { MdAdb } from 'react-icons/md'
 import { pages } from '../../data/dummyData'
 import logo from 'assets/logo.png'
 
-const TopNav = () => {
+const TopNav = (props) => {
     const [anchorEl, setAnchorEl] = useState(null)
+    const {setSelectedSection} = props;
 
     const handleClick = (index, event) => {
         setAnchorEl({ [index]: event.currentTarget })
@@ -29,7 +30,7 @@ const TopNav = () => {
         >
             <Toolbar disableGutters>
                 <Box className="min-w-[80px] pl-6">
-                    <a href="#" onClick={()=>{window.location.reload()}}>
+                    <a href="#" onClick={()=>{setSelectedSection(null)}}>
                         <img src={logo} alt={'logo'} className="h-[75px] w-auto" />
                     </a>
                 </Box>
@@ -74,6 +75,7 @@ const TopNav = () => {
                                     sx: {
                                         borderRadius: 0,
                                         minWidth: '180px',
+                                        marginTop: '3px',
                                     },
                                 }}
                                 MenuListProps={{

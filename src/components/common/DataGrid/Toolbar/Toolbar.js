@@ -14,6 +14,7 @@ const Toolbar = (props) => {
     const {
         checkedState,
         setCheckedState,
+        expanded,
         columns,
         setColumns,
         gridElement,
@@ -126,6 +127,7 @@ const Toolbar = (props) => {
                     gridElement={gridElement}
                     isSelected={isSelected}
                     selectedGridElement={selectedGridElement}
+                    expanded={expanded}
                 />
                 <FreezeDropdown
                     checkedState={checkedState}
@@ -133,6 +135,7 @@ const Toolbar = (props) => {
                     columns={columns}
                     setColumns={setColumns}
                     utilColumn={utilColumn}
+                    expanded={expanded}
                 />
                 <ReorderDropdown
                     checkedState={checkedState}
@@ -140,6 +143,7 @@ const Toolbar = (props) => {
                     columns={columns}
                     setColumns={setColumns}
                     utilColumn={utilColumn}
+                    expanded={expanded}
                 />
 
                 <Button
@@ -148,8 +152,13 @@ const Toolbar = (props) => {
                     size="small"
                     onClick={()=>setFilterActive(!filterActive)}
                 >
-                    {filterActive ? <MdNotInterested size={16} className="mr-3" /> : <FaFilter size={14} className="mr-3" /> }
-                    {filterActive ? 'Remove Filters' : 'Add Filters'}
+                    {filterActive ? <MdNotInterested size={16} /> : <FaFilter size={14} /> }
+                    {expanded === true && (
+                        <p className='ml-3 my-0' >
+                            {filterActive ? 'Remove Filters' : 'Add Filters'}
+                        </p>
+                    )}
+                    
             </Button>
 
             </Box>

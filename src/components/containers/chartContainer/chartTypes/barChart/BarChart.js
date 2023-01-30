@@ -3,9 +3,9 @@ import ReactEcharts from 'echarts-for-react'
 
 const BarChart = (props) => {
 
-    const { chartData } = props;
+    const { chartData, expanded } = props;
 
-    const options = {
+    const barOptions = {
         legend: {},
         tooltip: {},
         dataset: {
@@ -55,9 +55,21 @@ const BarChart = (props) => {
         ],
     };
 
+    const [option, setOption] = useState(barOptions);
+    useEffect(()=>{
+        setOption(barOptions)
+    }, [expanded])
+
     return(
         <>
-            <ReactEcharts option={options} />
+            <ReactEcharts 
+                style={{
+                    minHeight: '350px', 
+                    minWidth: '350px', 
+                    maxWidth: '460px'
+                }}
+                option={option} 
+            />
         </>
     )
 }

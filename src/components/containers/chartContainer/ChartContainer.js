@@ -17,6 +17,7 @@ const ChartContainer = (props) => {
     const {
         hasGraph,
         graphDetails,
+        expanded
     } = props;
 
     const [chartType, setChartType] = useState(hasGraph?graphDetails.graphType:null)
@@ -29,13 +30,13 @@ const ChartContainer = (props) => {
         <>
             {  
                 chartType === 'bar' ? (
-                    <BarChart chartData={graphDetails.graphData} />
+                    <BarChart expanded={expanded} chartData={graphDetails.graphData} />
                 ) : chartType === 'pie' ? (
-                    <PieChart chartData={graphDetails.graphData} />
+                    <PieChart expanded={expanded} chartData={graphDetails.graphData} />
                 ) : chartType === 'line' ? (
-                    <LineChart chartData={graphDetails.graphData} />
+                    <LineChart expanded={expanded} chartData={graphDetails.graphData} />
                 ) : chartType === 'hierarchical' ? (
-                    <TreeChart chartData={graphDetails.graphData} />
+                    <TreeChart expanded={expanded} chartData={graphDetails.graphData} />
                 ) : (
                     <Box>
                         No Chart
