@@ -71,9 +71,9 @@ const PieChart = (props) => {
     };
 
     const [option, setOption] = useState(pieOptions);
-    useEffect(()=>{
-        setOption(pieOptions)
-    }, [expanded])
+    // useEffect(()=>{
+    //     setOption(pieOptions)
+    // }, [expanded])
 
 
     return(

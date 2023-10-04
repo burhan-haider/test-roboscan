@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from 'react';
-import { 
+import React, { useEffect, useState } from 'react';
+import {
     Box,
-    Typography, 
+    Typography,
     Grid,
     TextField,
     Radio,
@@ -12,14 +12,14 @@ import {
 const ExecutiveSummary = (props) => {
 
     const {
-        summaryDetails = [],
+        summaryDetails = null,
     } = props;
 
-    return(
+    return (
         <Box
             className={'bg-[#f4f5fa] px-8 py-3 mx-2 mb-5 min-h-[450px]'}
         >
-            {summaryDetails !== [] &&(
+            {summaryDetails !== null && (
                 <>
                     <Box className="mt-3 mb-4">
                         <Typography className="text-lg" display="inline">
@@ -64,7 +64,7 @@ const ExecutiveSummary = (props) => {
                                     className="w-full mr-5 bg-white"
                                     sx={{
                                         "& .MuiInputBase-input.Mui-disabled": {
-                                          WebkitTextFillColor: "#444",
+                                            WebkitTextFillColor: "#444",
                                         },
                                     }}
                                     disabled
@@ -84,7 +84,7 @@ const ExecutiveSummary = (props) => {
                                     className="w-full mr-5 bg-white"
                                     sx={{
                                         "& .MuiInputBase-input.Mui-disabled": {
-                                          WebkitTextFillColor: "#444",
+                                            WebkitTextFillColor: "#444",
                                         },
                                     }}
                                     disabled
@@ -104,7 +104,7 @@ const ExecutiveSummary = (props) => {
                                     className="w-full bg-white"
                                     sx={{
                                         "& .MuiInputBase-input.Mui-disabled": {
-                                          WebkitTextFillColor: "#444",
+                                            WebkitTextFillColor: "#444",
                                         },
                                     }}
                                     multiline

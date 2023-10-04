@@ -6,8 +6,11 @@ import { sectionData } from 'data/dummyData';
 
 export const useSectionData = create((set)=>({
 
+    // sectionDetails: {},
     sectionDetails: Object.values(sectionData.sectionsData.sectionDetails),
+    // headerDetails: {},
     headerDetails: sectionData.headerOptionData.header,
+    // optionDetails: [],
     optionDetails: sectionData.headerOptionData.option,
     loading: false,
 

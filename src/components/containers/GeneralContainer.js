@@ -100,7 +100,12 @@ const GeneralContainer = (props) => {
                                 graphDetails={graphDetails} 
                             />
                         ) : type === 'table' ? (
-                            <DataGrid expanded={expanded.includes(sectionId)} tableData={tableDetails} title={title} utilColumn={'select'} />
+                            <DataGrid 
+                                expanded={expanded.includes(sectionId)} 
+                                tableData={tableDetails} 
+                                title={title} 
+                                utilColumn={'select'} 
+                            />
                         ) : type === 'form' ? (
                             <FormContainer
                                 sectionId={sectionId}
