@@ -43,7 +43,7 @@ const TopNav = (props) => {
                 >
                     {pages.map((page, index) => (
                         <React.Fragment key={page.id}>
-                            <Button
+                            {/* <Button
                                 id={page.title}
                                 className={
                                     'text-white rounded-none mx-0 min-w-[180px] my-0 hover:bg-[#2b313f] text-base min-h-[90px]' +
@@ -65,7 +65,7 @@ const TopNav = (props) => {
                                 onClick={(e) => handleClick(index, e)}
                             >
                                 {page.title}
-                            </Button>
+                            </Button> */}
                             <Menu
                                 id={`basic-menu-${index}`}
                                 anchorEl={anchorEl && anchorEl[index]}

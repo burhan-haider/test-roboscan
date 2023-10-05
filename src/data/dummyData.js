@@ -1194,7 +1194,7 @@ export const sectionData = {
           name: "Real-Time Screening Results",
           icon: "rtScreening",
           expandable: "true",
-          type: "component",
+          type: "form",
           componentType: "realTimeScanning",
           hasGraph: "false",
           hasTable: "false",
