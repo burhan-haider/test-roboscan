@@ -94,76 +94,76 @@ export const sections = [
         graphList: null,
     },
 
-    {
-        id: 3,
-        name: 'Real-Time Screening',
-        icon: 'rtScreening',
-        expandable: true,
-        type: 'component',
-        componentType: 'rtScreening',
-        hasGraph: true,
-        hasForm: true,
-        formData: [
-            {
-                name: 'Name',
-                value: 'Burhanuddin Patrawala',
-                type: 'text',
-            },
-            {
-                name: 'Other Names',
-                value: '',
-                type: 'text',
-            },
-            {
-                name: 'Date of Birth',
-                value: '',
-                type: 'date',
-            },
-            {
-                name: 'Account Number',
-                value: '502301000000133',
-                type: 'text',
-            },
-            {
-                name: 'Customer ID',
-                value: '610358304',
-                type: 'text',
-            },
-            {
-                name: 'Passport Number',
-                value: '',
-                type: 'text',
-            },
-            {
-                name: 'Tax ID Number',
-                value: '',
-                type: 'text',
-            },
-            {
-                name: 'Aadhaar Number',
-                value: '',
-                type: 'text',
-            },
-            {
-                name: 'Voter ID Number',
-                value: '',
-                type: 'text',
-            },
-            {
-                name: 'PAN Number',
-                value: '',
-                type: 'text',
-            },
-            {
-                name: 'Address',
-                value: '',
-                type: 'textarea',
-            },
-        ],
-        hasTable: false,
-        graph: 'PIE',
-        graphList: ['PIE'],
-    },
+    // {
+    //     id: 3,
+    //     name: 'Real-Time Screening',
+    //     icon: 'rtScreening',
+    //     expandable: true,
+    //     type: 'component',
+    //     componentType: 'rtScreening',
+    //     hasGraph: true,
+    //     hasForm: true,
+    //     formData: [
+    //         {
+    //             name: 'Name',
+    //             value: 'Burhanuddin Patrawala',
+    //             type: 'text',
+    //         },
+    //         {
+    //             name: 'Other Names',
+    //             value: '',
+    //             type: 'text',
+    //         },
+    //         {
+    //             name: 'Date of Birth',
+    //             value: '',
+    //             type: 'date',
+    //         },
+    //         {
+    //             name: 'Account Number',
+    //             value: '502301000000133',
+    //             type: 'text',
+    //         },
+    //         {
+    //             name: 'Customer ID',
+    //             value: '610358304',
+    //             type: 'text',
+    //         },
+    //         {
+    //             name: 'Passport Number',
+    //             value: '',
+    //             type: 'text',
+    //         },
+    //         {
+    //             name: 'Tax ID Number',
+    //             value: '',
+    //             type: 'text',
+    //         },
+    //         {
+    //             name: 'Aadhaar Number',
+    //             value: '',
+    //             type: 'text',
+    //         },
+    //         {
+    //             name: 'Voter ID Number',
+    //             value: '',
+    //             type: 'text',
+    //         },
+    //         {
+    //             name: 'PAN Number',
+    //             value: '',
+    //             type: 'text',
+    //         },
+    //         {
+    //             name: 'Address',
+    //             value: '',
+    //             type: 'textarea',
+    //         },
+    //     ],
+    //     hasTable: false,
+    //     graph: 'PIE',
+    //     graphList: ['PIE'],
+    // },
 
     {
         id: 4,
@@ -1189,132 +1189,132 @@ export const sectionData = {
           graphDetails: null,
           summaryDetails: null
         },
+        // section2: {
+        //   id: 2,
+        //   name: "Real-Time Screening Results",
+        //   icon: "rtScreening",
+        //   expandable: "true",
+        //   type: "form",
+        //   componentType: "realTimeScanning",
+        //   hasGraph: "false",
+        //   hasTable: "false",
+        //   hasForm: "false",
+        //   hasSummary: "false",
+        //   formDetails: [
+        //     {
+        //       index: 1,
+        //       inputType: "date",
+        //       name: "RTSCAN_STATICDATA_UPDATEDATE",
+        //       label: "Last static data update date",
+        //       options: null,
+        //       value: "18/01/2013"
+        //     },
+        //     {
+        //       index: 2,
+        //       inputType: "date",
+        //       name: "RTSCAN_TXNDATA_UPDATEDATE",
+        //       label: "Last transaction update date",
+        //       options: null,
+        //       value: "26/04/2012"
+        //     },
+        //     {
+        //       index: 3,
+        //       inputType: "text",
+        //       name: "RTSCAN_NAME",
+        //       label: "Name",
+        //       options: null,
+        //       value: "RAJ RANI W/O SURESH"
+        //     },
+        //     {
+        //       index: 4,
+        //       inputType: "text",
+        //       name: "RTSCAN_OTHERNAMES",
+        //       label: "Other Names",
+        //       options: null,
+        //       value: " ~ "
+        //     },
+        //     {
+        //       index: 5,
+        //       inputType: "date",
+        //       name: "RTSCAN_DOB",
+        //       label: "Date of Birth",
+        //       options: null,
+        //       value: "01/01/1980"
+        //     },
+        //     {
+        //       index: 6,
+        //       inputType: "text",
+        //       name: "RTSCAN_ACCOUNTNO",
+        //       label: "Account Number",
+        //       options: null,
+        //       value: "ALL"
+        //     },
+        //     {
+        //       index: 7,
+        //       inputType: "text",
+        //       name: "RTSCAN_CUSTOMERID",
+        //       label: "Customer ID",
+        //       options: null,
+        //       value: "610359726"
+        //     },
+        //     {
+        //       index: 8,
+        //       inputType: "text",
+        //       name: "RTSCAN_PASSPORTNO",
+        //       label: "Passport Number",
+        //       options: null,
+        //       value: " "
+        //     },
+        //     {
+        //       index: 9,
+        //       inputType: "text",
+        //       name: "RTSCAN_TAXID",
+        //       label: "Tax ID Number",
+        //       options: null,
+        //       value: null
+        //     },
+        //     {
+        //       index: 10,
+        //       inputType: "text",
+        //       name: "RTSCAN_NATIONALID",
+        //       label: "Aadhaar Number",
+        //       options: null,
+        //       value: null
+        //     },
+        //     {
+        //       index: 11,
+        //       inputType: "text",
+        //       name: "RTSCAN_VOTERID",
+        //       label: "Voter ID Number",
+        //       options: null,
+        //       value: " "
+        //     },
+        //     {
+        //       index: 12,
+        //       inputType: "text",
+        //       name: "RTSCAN_PANNO",
+        //       label: "PAN Number",
+        //       options: null,
+        //       value: " "
+        //     },
+        //     {
+        //       index: 13,
+        //       inputType: "button",
+        //       label: "SCAN",
+        //       function: "modal",
+        //       modalDetails: {
+        //         moduleType: "realTimeScanning",
+        //         modalData: "/api/roboscanapi/dataEntryFormScanning"
+        //       },
+        //       value: null
+        //     }
+        //   ],
+        //   tableDetails: null,
+        //   graphDetails: null,
+        //   summaryDetails: null
+        // },
         section2: {
           id: 2,
-          name: "Real-Time Screening Results",
-          icon: "rtScreening",
-          expandable: "true",
-          type: "form",
-          componentType: "realTimeScanning",
-          hasGraph: "false",
-          hasTable: "false",
-          hasForm: "false",
-          hasSummary: "false",
-          formDetails: [
-            {
-              index: 1,
-              inputType: "date",
-              name: "RTSCAN_STATICDATA_UPDATEDATE",
-              label: "Last static data update date",
-              options: null,
-              value: "18/01/2013"
-            },
-            {
-              index: 2,
-              inputType: "date",
-              name: "RTSCAN_TXNDATA_UPDATEDATE",
-              label: "Last transaction update date",
-              options: null,
-              value: "26/04/2012"
-            },
-            {
-              index: 3,
-              inputType: "text",
-              name: "RTSCAN_NAME",
-              label: "Name",
-              options: null,
-              value: "RAJ RANI W/O SURESH"
-            },
-            {
-              index: 4,
-              inputType: "text",
-              name: "RTSCAN_OTHERNAMES",
-              label: "Other Names",
-              options: null,
-              value: " ~ "
-            },
-            {
-              index: 5,
-              inputType: "date",
-              name: "RTSCAN_DOB",
-              label: "Date of Birth",
-              options: null,
-              value: "01/01/1980"
-            },
-            {
-              index: 6,
-              inputType: "text",
-              name: "RTSCAN_ACCOUNTNO",
-              label: "Account Number",
-              options: null,
-              value: "ALL"
-            },
-            {
-              index: 7,
-              inputType: "text",
-              name: "RTSCAN_CUSTOMERID",
-              label: "Customer ID",
-              options: null,
-              value: "610359726"
-            },
-            {
-              index: 8,
-              inputType: "text",
-              name: "RTSCAN_PASSPORTNO",
-              label: "Passport Number",
-              options: null,
-              value: " "
-            },
-            {
-              index: 9,
-              inputType: "text",
-              name: "RTSCAN_TAXID",
-              label: "Tax ID Number",
-              options: null,
-              value: null
-            },
-            {
-              index: 10,
-              inputType: "text",
-              name: "RTSCAN_NATIONALID",
-              label: "Aadhaar Number",
-              options: null,
-              value: null
-            },
-            {
-              index: 11,
-              inputType: "text",
-              name: "RTSCAN_VOTERID",
-              label: "Voter ID Number",
-              options: null,
-              value: " "
-            },
-            {
-              index: 12,
-              inputType: "text",
-              name: "RTSCAN_PANNO",
-              label: "PAN Number",
-              options: null,
-              value: " "
-            },
-            {
-              index: 13,
-              inputType: "button",
-              label: "SCAN",
-              function: "modal",
-              modalDetails: {
-                moduleType: "realTimeScanning",
-                modalData: "/api/roboscanapi/dataEntryFormScanning"
-              },
-              value: null
-            }
-          ],
-          tableDetails: null,
-          graphDetails: null,
-          summaryDetails: null
-        },
-        section3: {
-          id: 3,
           name: "Transaction Details",
           icon: "transaction",
           expandable: "true",
@@ -1643,8 +1643,8 @@ export const sectionData = {
           },
           summaryDetails: null
         },
-        section4: {
-          id: 4,
+        section3: {
+          id: 3,
           name: "Account Profile (Past 6 months)",
           icon: "accountProfile",
           expandable: "true",
@@ -1778,8 +1778,8 @@ export const sectionData = {
           },
           summaryDetails: null
         },
-        section5: {
-          id: 5,
+        section4: {
+          id: 4,
           name: "Links",
           icon: "links",
           expandable: "true",
@@ -1901,8 +1901,8 @@ export const sectionData = {
           },
           summaryDetails: null
         },
-        section6: {
-          id: 6,
+        section5: {
+          id: 5,
           name: "Past History",
           icon: "pastHistory",
           expandable: "true",
@@ -1945,8 +1945,8 @@ export const sectionData = {
           graphDetails: null,
           summaryDetails: null
         },
-        section7: {
-          id: 7,
+        section6: {
+          id: 6,
           name: "Related Parties",
           icon: "relatedParties",
           expandable: "true",
@@ -2022,26 +2022,26 @@ export const sectionData = {
           graphDetails: null,
           summaryDetails: null
         },
-        section8: {
-          id: 8,
-          name: "Ringside View",
-          icon: "ringsideView",
-          expandable: "true",
-          type: "summary",
-          componentType: null,
-          hasGraph: "false",
-          hasTable: "false",
-          hasForm: "false",
-          hasSummary: "true",
-          formDetails: null,
-          tableDetails: null,
-          graphDetails: null,
-          summaryDetails: {
-            PARAGRAPHDETAILS: "In the last 30 days, this alert was breached a total of ^~^ 0 ^~^ times in the bank and ^~^  ^~^ times for customers of the same profile and ^~^  ^~^  times for the base branch of this account.\n                ^~N~^ In the last 30 days, transactions from this branch breached a total of ^~^ 0 ^~^ number of alerts for ^~^ 0 ^~^\n                sets of customers across ^~^ 0 ^~^ sets of account" 
-            }
-        },
-        section9: {
-          id: 9,
+        // section7: {
+        //   id: 7,
+        //   name: "Ringside View",
+        //   icon: "ringsideView",
+        //   expandable: "true",
+        //   type: "summary",
+        //   componentType: null,
+        //   hasGraph: "false",
+        //   hasTable: "false",
+        //   hasForm: "false",
+        //   hasSummary: "true",
+        //   formDetails: null,
+        //   tableDetails: null,
+        //   graphDetails: null,
+        //   summaryDetails: {
+        //     PARAGRAPHDETAILS: "In the last 30 days, this alert was breached a total of ^~^ 0 ^~^ times in the bank and ^~^  ^~^ times for customers of the same profile and ^~^  ^~^  times for the base branch of this account.\n                ^~N~^ In the last 30 days, transactions from this branch breached a total of ^~^ 0 ^~^ number of alerts for ^~^ 0 ^~^\n                sets of customers across ^~^ 0 ^~^ sets of account" 
+        //     }
+        // },
+        section7: {
+          id: 7,
           name: "User Comments and Notes Start",
           icon: "userComments",
           expandable: "true",
@@ -2065,8 +2065,8 @@ export const sectionData = {
           graphDetails: null,
           summaryDetails: null
         },
-        section10: {
-          id: 10,
+        section8: {
+          id: 8,
           name: "Action Items Start",
           icon: "actionItem",
           expandable: "true",
@@ -2212,8 +2212,8 @@ export const sectionData = {
           graphDetails: null,
           summaryDetails: null
         },
-        section11: {
-          id: 11,
+        section9: {
+          id: 9,
           name: "Customer Case Details",
           icon: "custDetails",
           expandable: "true",
@@ -2379,8 +2379,8 @@ export const sectionData = {
           graphDetails: null,
           summaryDetails: null
         },
-        section12: {
-          id: 12,
+        section10: {
+          id: 10,
           name: "Alert Details",
           icon: "entityLink",
           expandable: "true",
@@ -2758,8 +2758,8 @@ export const sectionData = {
           graphDetails: null,
           summaryDetails: null
         },
-        section13: {
-          id: 13,
+        section11: {
+          id: 11,
           name: "FY-Wise Account Summary Details",
           icon: "summaryDetails",
           expandable: "true",

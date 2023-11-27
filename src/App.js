@@ -30,6 +30,8 @@ function App(props) {
             expanded.includes(section.id)
         ) {
             return 12
+        } else if(section.type === 'table' && allSections.filter(e=>e.id === section.id + 1)[0].type==='table') {
+            return 12
         } else if(section.type === 'table') {
             return 8
         } else if (expanded.includes(section.id + 1)) {
